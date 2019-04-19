@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SyohinDataEntityRepository extends JpaRepository<SyohinDataEntity, Integer> {
-	List<SyohinDataEntity> findByName(String find);
+	List<SyohinDataEntity> findBy_SyohinCode(Short find);
 }

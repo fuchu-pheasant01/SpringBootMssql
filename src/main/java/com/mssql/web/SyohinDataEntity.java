@@ -42,7 +42,7 @@ public class SyohinDataEntity {
 		_SyohinName = Name;
 		_EditDate = Date;
 		_EditTime = Time;
-		_Note = Note;
+		this._Note = Note;
 	}
 
 	public Integer getNumId() {
