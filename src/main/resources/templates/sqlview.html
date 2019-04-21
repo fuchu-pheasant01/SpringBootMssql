@@ -2,16 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title th:text="${title}">ノーマルタイトル</title>
+	<title th:text="${title}">データベース表示・検索</title>
 	<style>
 		body { padding: 10px; color: #666; }
 		th { padding: 10px;0px; background: #666; color: red; }
 		td { padding: 10px;0px; background: #ddd; color: #333; }
+		.center { text-align: center;}
 	</style>
 </head>
 <body>
+<div class="center">
 	<h1 th:text="${title}"></h1>
-	<form method="post" action="/">
+	<h2 th:inlietext="text">こんにちは、[[${#httpServletRequest.remoteUser}]]さん</h2>
+	<form action="/sqlview" method="post">
 		<input type="text" name="find" th:value="${value}" />
 		<input type="submit" value="検索" />
 	</form>
@@ -29,5 +32,9 @@
 			<td th:text="${entity.Note}"></td>
 		</tr>
 	</table>
+	<form th:action="@{/logout}" method="post">
+		<div><input type="submit" value="ログアウト" /></div>
+	</form>
+</div>
 </body>
 </html>
