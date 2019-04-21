@@ -30,6 +30,7 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
 				.defaultSuccessUrl("/sqlview") //ログイン成功時のアクセス先html。UserDetailsServiceメソッドを使う場合は要らない。
 				.permitAll()
 			.and()
+			.csrf().disable() //csrf対策無効。本当は良くないが。検索のpostで403を返すので取り合えず勉強中。
 			.logout()
 				.permitAll();
 	}
