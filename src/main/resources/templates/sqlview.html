@@ -3,11 +3,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title th:text="${title}">データベース表示・検索</title>
-	<style>
+	<style type="text/css" media="all">
 		body { padding: 10px; color: #666; }
 		th { padding: 10px;0px; background: #666; color: red; }
 		td { padding: 10px;0px; background: #ddd; color: #333; }
 		.center { text-align: center;}
+		input.wd { width: 300px; }
 	</style>
 </head>
 <body>
@@ -15,7 +16,7 @@
 	<h1 th:text="${title}"></h1>
 	<h2 th:inlietext="text">こんにちは、[[${#httpServletRequest.remoteUser}]]さん</h2>
 	<form action="/sqlview" method="post">
-		<input type="text" name="find" th:value="${value}" />
+		<input class= "wd" type="text" name="find" th:value="${value}" />
 		<input type="submit" value="検索" />
 	</form>
 	<table>

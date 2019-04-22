@@ -3,17 +3,18 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>ログイン認証</title>
-	<style>
+	<style type="text/css" media="all">
 		body { padding: 10px; color: #666; }
 		.center { text-align: center; }
+		input.wd { width: 300px; }
 	</style>
 </head>
 <body>
 <div class="center">
 	<h2>ログイン認証</h2>
 	<form th:action="@{/login}" method="post">
-		<div><label>ユーザー名：<input type="text" name="username" /></label></div>
-		<div><label>パスワード：<input type="password" name="password" /></label></div>
+		<div><label>ユーザー名：<input class ="wd" type="text" name="username" /></label></div>
+		<div><label>パスワード：<input class = "wd" type="password" name="password" /></label></div>
 		<div><input type="submit" value="ログイン" /></div>
 	</form>
 	<div th:if="${param.error}">
