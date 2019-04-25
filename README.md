@@ -10,5 +10,5 @@ ___
 テンプレートエンジン：Thymeleaf 2.1.2  
 データベース：Microsoft SQLServer 2017 Express  
 データベース接続：Microsoft JDBC Driver xx for SQL Server
-O/R マッパー：Hibernate Core 5.3.9 Final + JPA  
+O/R マッパー：Hibernate ORM 5.3.9 Final + JPA  
 ```
