@@ -66,7 +66,7 @@ public class SyohinDataEntity {
 	public BigDecimal getEditDate() {
 		return _EditDate;
 	}
-	public void setEdit(BigDecimal value) {
+	public void setEditDate(BigDecimal value) {
 		_EditDate = value;
 	}
 
