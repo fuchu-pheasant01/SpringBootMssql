@@ -10,11 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Syohin")
+@Table(name = "SyohinDataPojo")
 public class SyohinDataEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "NumId", columnDefinition = "int", nullable = false)
 	private Integer _NumId;
 
 	@Column(name = "SyohinNum", columnDefinition = "smallint", nullable = false)
