@@ -19,6 +19,7 @@
 		<input class= "wd" type="text" name="find" th:value="${value}" />
 		<input type="submit" value="検索" />
 	</form>
+	<div align="center">
 	<table>
 		<tr>
 			<th>NumId</th><th>SyohinNum</th><th>SyohinName</th>
@@ -33,6 +34,7 @@
 			<td th:text="${entity.Note}"></td>
 		</tr>
 	</table>
+	</div>
 	<form th:action="@{/logout}" method="post">
 		<div><input type="submit" value="ログアウト" /></div>
 	</form>
