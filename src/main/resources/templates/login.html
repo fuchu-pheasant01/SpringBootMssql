@@ -2,27 +2,47 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
 	<title>ログイン認証</title>
 	<style type="text/css" media="all">
-		body { padding: 10px; color: #666; }
-		.center { text-align: center; }
+		body { padding: 0px; color: #666; }
 		input.wd { width: 300px; }
 	</style>
 </head>
 <body>
-<div class="center">
-	<h2>ログイン認証</h2>
+<nav class="navbar navbar-expand-lg bg-dark navbar-fixed-top">
+	<div class="container">
+	<a class="navbar-brand" href="Controll">商品リスト管理 ログイン認証</a>
+	</div>
+</nav>
+<br />
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<p class="h2 text-center">ログイン認証</p><br />
 	<form th:action="@{/login}" method="post">
-		<div><label>ユーザー名：<input class ="wd" type="text" name="username" /></label></div>
-		<div><label>パスワード：<input class = "wd" type="password" name="password" /></label></div>
-		<div><input type="submit" value="ログイン" /></div>
+		<label>ユーザー名：</label>
+		<input type="text" name="username" class="form-control form-control-sm" />
+		<br />
+		<label>パスワード：</label>
+		<input type="password" name="password" class="form-control form-control-sm" />
+		<br />
+		<input class="btn btn-primary" type="submit" value="ログイン" />
 	</form>
+	<br />
 	<div th:if="${param.error}">
 		<strong><font color="red">ユーザー名またはパスワードに誤りがあります。</font></strong>
 	</div>
 	<div th:if="${param.logout}">
 		<strong>ログアウトしました。</strong>
 	</div>
+	</div>
+	<div class="col-md-2"></div>
 </div>
+<footer class="footer mt-auto py-3" style=" background-color: navy;">
+	<div class="container">
+		<span class="text-muted">2019 - Spring Boot Sample</span>
+	</div>
+</footer>
 </body>
 </html>

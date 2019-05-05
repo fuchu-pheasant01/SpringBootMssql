@@ -2,30 +2,53 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title th:text="${title}">データベース表示・検索</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+	<title th:text="${title}">商品リスト管理・ホーム</title>
 	<style type="text/css" media="all">
-		body { padding: 10px; color: #666; }
-		th { padding: 10px;0px; background: #666; color: red; }
-		td { padding: 10px;0px; background: #ddd; color: #333; }
-		.center { text-align: center;}
+		body { padding: 0px; color: #666; }
+		th { padding: 10px;0px; color: tomato; }
+		td { padding: 10px;0px; color: #333; }
 		input.wd { width: 300px; }
 	</style>
 </head>
 <body>
-<div class="center">
+<nav class="navbar navbar-expand-lg bg-dark navbar-fixed-top">
+	<div class="container">
+	<a class="navbar-brand" href="Controll">商品リスト管理</a>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="#">ホーム</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">商品追加</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled">商品削除</a>
+			</li>
+		</ul>
+	</div>
+	</div>
+</nav>
+<br />
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+	<p class="h2 text-center">商品一覧表</p><br />
 	<h1 th:text="${title}"></h1>
+	<p class="text-center">Spring Boot + SQLServerで読み書きするサンプル。</p><br />
 	<h2 th:inlietext="text">こんにちは、[[${#httpServletRequest.remoteUser}]]さん</h2>
 	<form action="/sqlview" method="post">
-		<input class= "wd" type="text" name="find" th:value="${value}" />
-		<input type="submit" value="検索" />
+		<input type="text" name="find" class="form-control form-control-sm" th:value="${value}" />
+		<input class="btn btn-primary" type="submit" value="検索" />
 	</form>
-	<div align="center">
-	<table>
-		<tr>
-			<th>NumId</th><th>SyohinNum</th><th>SyohinName</th>
-			<th>EditDate</th><th>EditTime</th><th>Note</th>
+	<br />
+	<table class="table table-sm table-dark">
+		<tr class="table-primary">
+			<th>ID</th><th>商品番号</th><th>商品名</th>
+			<th>編集時刻</th><th>編集時刻</th><th>備考</th>
 		</tr>
-		<tr th:each="entity : ${data}">
+		<tr th:each="entity : ${data}" class="table-light">
 			<td th:text="${entity.NumId}"></td>
 			<td th:text="${entity.SyohinCode}"></td>
 			<td th:text="${entity.SyohinName}"></td>
@@ -34,10 +57,18 @@
 			<td th:text="${entity.Note}"></td>
 		</tr>
 	</table>
-	</div>
+	
 	<form th:action="@{/logout}" method="post">
-		<div><input type="submit" value="ログアウト" /></div>
+		<input class="btn btn-primary" type="submit" value="ログアウト" />
 	</form>
+	<br />
+	</div>
+	<div class="col-md-2"></div>
 </div>
+<footer class="footer mt-auto py-3" style=" background-color: navy;">
+	<div class="container">
+		<span class="text-muted">2019 - Spring Boot Sample</span>
+	</div>
+</footer>
 </body>
 </html>
