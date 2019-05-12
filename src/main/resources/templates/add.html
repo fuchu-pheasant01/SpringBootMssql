@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+	<title>商品登録</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	<style type="text/css" media="all">
+		body { padding: 0px; color: #666; }
+		th { padding: 10px;0px; color: tomato; }
+		td { padding: 10px;0px; color: #333; }
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark navbar-fixed-top">
+	<div class="container">
+	<a class="navbar-brand" href="/sqlview">商品リスト管理</a>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/sqlview">ホーム</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/add">商品登録</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled">商品削除</a>
+			</li>
+		</ul>
+	</div>
+	</div>
+</nav>
+<br />
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+	<p class="h2 text-center">商品登録</p><br />
+	<form action="/Insert" method="post">
+		<div class="form-row">
+			<!-- <div class="form-group col-md-1">
+			<label>IDキー</label>
+			<input type="text" name="NumId" class="form-control form-control-sm" placeholder="" /><br />
+			</div> -->
+			<div class="form-group col-md-2">
+			<label>商品番号</label>
+			<input type="text" name="SyohinCode" class="form-control form-control-sm" placeholder="" /><br />
+			</div>
+			<div class="form-group col-md-4">
+			<label>商品名</label>
+			<input type="text" name="SyohinName" class="form-control form-control-sm" placeholder="" /><br />
+			</div>
+			</div>
+			<div class="form-row">
+			<div class="form-group col-md-2">
+			<label>編集日付</label>
+			<input type="text" name="EditDate" class="form-control form-control-sm" placeholder="" /><br />
+			</div>
+			<div class="form-group col-md-2">
+			<label>編集時刻</label>
+			<input type="text" name="EditTime" class="form-control form-control-sm" placeholder="" /><br />
+			</div>
+			<div class="form-group col-md-6">
+			<label>備考</label>
+			<input type="text" name="Note" class="form-control form-control-sm" placeholder="" /><br />
+			</div>
+		</div>
+		<input class="btn btn-primary" type="submit" value="実行">
+	</form>
+	<br />
+	</div>
+	<div class="col-md-2"></div>
+</div>
+<footer class="footer mt-auto py-3" style=" background-color: navy;">
+	<div class="container">
+		<span class="text-muted">2019 - Spring Boot Sample</span>
+	</div>
+</footer>
+</body>
+</html>
